@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Розыгрыши: какие реально платят, а какие — сбор номеров</title>
+<style>
+  :root{
+    --bg:#080d16; --panel:#0f1826; --panel2:#0b1320;
+    --acc:#38e07b; --acc2:#1fb862; --warn:#ffb020;
+    --txt:#eaf1fb; --muted:#8fa0b8; --line:rgba(56,224,123,.18);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:radial-gradient(1000px 520px at 50% -10%, #12253a 0%, var(--bg) 60%);
+    color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    line-height:1.45;padding:18px 16px 40px;min-height:100vh;
+  }
+  .wrap{max-width:520px;margin:0 auto}
+  .kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--acc);border:1px solid var(--line);border-radius:999px;
+    padding:7px 14px;margin-bottom:18px}
+  .kicker i{width:7px;height:7px;border-radius:50%;background:var(--acc);display:block}
+  h1{font-size:28px;line-height:1.18;font-weight:800;margin-bottom:12px}
+  h1 span{color:var(--acc)}
+  .lead{color:var(--muted);font-size:15.5px;margin-bottom:22px}
+  .cards{display:grid;gap:10px;margin-bottom:22px}
+  .card{background:linear-gradient(180deg,var(--panel) 0%,var(--panel2) 100%);
+    border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:14px 16px;display:flex;gap:12px}
+  .card .num{flex:0 0 26px;height:26px;border-radius:8px;background:rgba(56,224,123,.14);
+    color:var(--acc);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+  .card b{display:block;font-size:15px;margin-bottom:3px}
+  .card p{color:var(--muted);font-size:13.5px}
+  .warn{background:rgba(255,176,32,.08);border:1px solid rgba(255,176,32,.28);
+    border-radius:12px;padding:12px 14px;font-size:13.5px;color:#ffd27a;margin-bottom:20px}
+  .cta{display:block;text-align:center;text-decoration:none;font-weight:800;font-size:17px;
+    color:#04140a;background:linear-gradient(180deg,var(--acc) 0%,var(--acc2) 100%);
+    padding:17px 20px;border-radius:14px;box-shadow:0 10px 26px rgba(56,224,123,.22);margin-bottom:12px}
+  .cta:active{transform:translateY(1px)}
+  .sub{text-align:center;color:var(--muted);font-size:13px;margin-bottom:24px}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:24px}
+  .st{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:12px;
+    padding:12px 8px;text-align:center}
+  .st b{display:block;font-size:19px;color:var(--acc)}
+  .st span{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+  footer{border-top:1px solid rgba(255,255,255,.07);padding-top:16px;color:#70808f;
+    font-size:11.5px;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker"><i></i> розыгрыши · проверка условий</div>
+
+  <h1>Розыгрыши техники и денег: <span>какие реальные</span>, а какие собирают номера</h1>
+  <p class="lead">Разбираю, как отличить настоящий розыгрыш от сбора базы номеров: где смотрят условия, что написано мелким шрифтом и когда участие стоит времени.</p>
+
+  <div class="cards">
+    <div class="card"><div class="num">1</div><div><b>Кто организатор</b><p>Если не указан — это не розыгрыш, а сбор контактов.</p></div></div>
+    <div class="card"><div class="num">2</div><div><b>Условия и сроки</b><p>Дата итогов, правила, призовой фонд — должны быть на странице.</p></div></div>
+    <div class="card"><div class="num">3</div><div><b>Что просят взамен</b><p>Номер — норма. Оплата «за участие» — красный флаг.</p></div></div>
+  </div>
+
+  <div class="stats">
+    <div class="st"><b>3</b><span>признака</span></div>
+    <div class="st"><b>0 ₽</b><span>за участие</span></div>
+    <div class="st"><b>18+</b><span>возраст</span></div>
+  </div>
+
+  <div class="warn">
+    Внимание: участие в розыгрышах не требует оплаты. Если просят деньги за «активацию приза» — это мошенничество.
+  </div>
+
+  <!-- ССЫЛКА НА ОФФЕР: меняется в одном месте -->
+  <a class="cta" id="go" href="https://example.com/offer-placeholder" rel="nofollow sponsored">Смотреть актуальные розыгрыши</a>
+  <p class="sub">Список обновляется. Условия каждого розыгрыша — на странице организатора.</p>
+
+  <footer>
+    Материалы носят информационный характер. Ссылка может быть партнёрской.<br>
+    Участие в розыгрышах бесплатное. Только для лиц старше 18 лет.<br>
+    Персональные данные передаются организатору розыгрыша на его условиях.
+  </footer>
+</div>
+
+<script>
+  document.getElementById('go').addEventListener('click', function () {
+    try { if (window.ym) window.ym(0, 'reachGoal', 'cta_click'); } catch (e) {}
+  });
+</script>
+</body>
+</html>
